@@ -1,0 +1,20 @@
+{
+    "name": "rybakatya.rnet.replication.editor",
+    "rootNamespace": "RNet.Replication.Editor",
+    "references": [
+        "GUID:8c766e847df409245acbd629d0df0f87",
+        "GUID:848b54cd370c4e844adfb7a75bcc6d73",
+        "GUID:399a4ec134b9e0c4c9c0f962fcab830d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
