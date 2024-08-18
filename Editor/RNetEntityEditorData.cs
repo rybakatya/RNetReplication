@@ -1,3 +1,4 @@
+using RapidNet.Replication.Prefabs.Serialization;
 using System;
 using System.Collections;
 using System.Collections.Generic;

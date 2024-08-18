@@ -1,7 +1,9 @@
 {
     "name": "rybakatya.rnet.replication",
     "rootNamespace": "RapidNet.Replication",
-    "references": [],
+    "references": [
+        "GUID:8c766e847df409245acbd629d0df0f87"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

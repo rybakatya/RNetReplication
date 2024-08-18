@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using RapidNet.Replication.Prefabs.Serialization;
 using RapidNet.ToolsForUnity.Editor;
 using System;
 using System.Collections.Generic;
@@ -118,7 +119,7 @@ namespace RapidNet.Replication.Editor
                         bundlePath = "server/entities/" + entity.entityName + "/" + entity.entityName + "_" + data.relationship.ToString().ToLower()
                     };
                     var assetPath = AssetDatabase.GetAssetPath(data.prefab);
-                    AssetDatabase.RenameAsset(assetPath, entity.entityName + "_" + data.relationship.ToString().ToLower());
+                    AssetDatabase.RenameAsset(assetPath, rootData.bundlePath);
                     var json = JsonConvert.SerializeObject(rootData, Formatting.Indented);
                     var path = Application.streamingAssetsPath + "/server/entities/" + entity.entityName + "/" + entity.entityName + ".json";
 
