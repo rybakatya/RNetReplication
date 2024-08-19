@@ -1,21 +1,33 @@
+using RapidNet.Replication.Prefabs.Serialization;
+using RapidNet.Serialization;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace RapidNet.Replication
 {
-    public class RNetEntityInstance : MonoBehaviour
+    public abstract class RNetEntityInstance : MonoBehaviour, IEquatable<RNetEntityInstance>
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public ushort id;
+        public ushort key;
+        public ushort owner;
         
+        public byte size;
+
+       
+        
+
+        public bool Equals(RNetEntityInstance other)
+        {
+            if(id == other.id)
+                return true;
+            return false;
         }
 
-        // Update is called once per frame
-        void Update()
+        public override int GetHashCode()
         {
-        
+            return id;
         }
     }
 }

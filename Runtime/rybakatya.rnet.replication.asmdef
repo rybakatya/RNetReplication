@@ -2,7 +2,9 @@
     "name": "rybakatya.rnet.replication",
     "rootNamespace": "RapidNet.Replication",
     "references": [
-        "GUID:8c766e847df409245acbd629d0df0f87"
+        "GUID:8c766e847df409245acbd629d0df0f87",
+        "GUID:e0cd26848372d4e5c891c569017e11f1",
+        "GUID:1a5cc8507142eba448db8a1952b2199e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

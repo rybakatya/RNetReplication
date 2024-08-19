@@ -119,7 +119,7 @@ namespace RapidNet.Replication.Editor
                         bundlePath = "server/entities/" + entity.entityName + "/" + entity.entityName + "_" + data.relationship.ToString().ToLower()
                     };
                     var assetPath = AssetDatabase.GetAssetPath(data.prefab);
-                    AssetDatabase.RenameAsset(assetPath, rootData.bundlePath);
+                    AssetDatabase.RenameAsset(assetPath, entity.entityName + "_" + data.relationship.ToString().ToLower());
                     var json = JsonConvert.SerializeObject(rootData, Formatting.Indented);
                     var path = Application.streamingAssetsPath + "/server/entities/" + entity.entityName + "/" + entity.entityName + ".json";
 

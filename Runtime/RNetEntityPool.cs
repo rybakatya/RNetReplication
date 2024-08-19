@@ -35,7 +35,8 @@ namespace RapidNet.Replication
                     var component = inst.GetComponent<RNetEntityInstance>();
                     if (component == null)
                     {
-                        component = inst.AddComponent<RNetEntityInstance>();
+                        RapidNet.Logging.Logger.Log(Logging.LogLevel.Warning, "Entity must have an RNetEntityInstance script attached!");
+                        continue;
                     }
                     entityPool[rnetPrefab.key].Add(component);
                 }
@@ -46,12 +47,15 @@ namespace RapidNet.Replication
         {
             var inst = entityPool[entityKey][entityPool[entityKey].Count - 1];
             entityPool[entityKey].RemoveAt(entityPool[entityKey].Count - 1);
+            inst.transform.SetParent(null);
             return inst;
         }
 
         internal void Return(ushort entityKey, RNetEntityInstance entity)
         {
             entity.transform.position = spawnPoint;
+            entity.transform.SetParent(parent.transform, false);
+            entity.transform.localPosition = Vector3.zero;
             entityPool[entityKey].Add(entity);
         }
 
@@ -88,7 +92,8 @@ namespace RapidNet.Replication
                         var component = inst.GetComponent<RNetEntityInstance>();
                         if (component == null)
                         {
-                            component = inst.AddComponent<RNetEntityInstance>();
+                            RapidNet.Logging.Logger.Log(Logging.LogLevel.Warning, "Entity must have an RNetEntityInstance script attached!");
+                            continue;
                         }
                         entityPool[rnetPrefab.key][data.relationship].Add(component);
                     }
@@ -102,11 +107,14 @@ namespace RapidNet.Replication
         {
             var inst = entityPool[key][relationship][entityPool[key][relationship].Count - 1];
             entityPool[key][relationship].RemoveAt(entityPool[key][relationship].Count - 1);
+            inst.transform.SetParent(null);
             return inst;
         }
 
         public void Return(ushort key, RNetRelationship relationship, RNetEntityInstance entity)
         {
+            entity.transform.SetParent(parent.transform, false);
+            entity.transform.localPosition = Vector3.zero;
             entityPool[key][relationship].Add(entity);
         }
     }
