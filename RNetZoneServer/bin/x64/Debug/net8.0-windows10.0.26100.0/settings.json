@@ -1,0 +1,16 @@
+{
+  "ip": "127.0.0.1",
+  "port": 7777,
+  "maxChannels": 255,
+  "maxConnections": 1024,
+  "zoneProxyServers": [
+    {
+      "ip": "127.0.0.1",
+      "port": 7778
+    },
+    {
+      "ip": "127.0.0.1",
+      "port": 7779
+    }
+  ]
+}
